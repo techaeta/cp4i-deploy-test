@@ -1,0 +1,39 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: qm1-native-ha
+spec:
+  license:
+    accept: true
+    license: L-RJON-BYRMYW
+    use: NonProduction
+  version: 9.2.2.0-r1
+  queueManager:
+    name: QM1
+    availability:
+      type: NativeHA
+      tls:
+        secretName: qm1-tls-secret-ha-internal
+    mqsc:
+    - configMap:
+        name: qm1-configmap
+        items:
+        - tls.mqsc
+    storage:
+      defaultClass: ibmc-vpc-block-10iops-tier       
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+  pki:
+    keys:
+      - name: example
+        secret:
+          secretName: qm1-tls-secret
+          items: 
+          - tls.key
+          - tls.crt   
+               

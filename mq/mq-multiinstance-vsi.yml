@@ -1,0 +1,55 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: mq-ha-mi
+  namespace: cp4i
+spec:
+  license:
+    accept: true
+    license: L-RJON-BUVMQX
+    use: NonProduction
+  web:
+    enabled: true
+  version: 9.2.1.0-r1
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+  securityContext:
+     supplementalGroups: [99]
+  queueManager:
+    name: QM1
+    availability:
+      type: MultiInstance
+    mqsc:
+    - configMap:
+        name: mq-ha-mi-configmap
+        items:
+        - tls.mqsc  
+    storage:
+      defaultClass: ibmc-file-gold-gid
+      persistedData:
+        class: ibmc-file-gold-gid
+        enabled: true
+        size: 2Gi
+        type: persistent-claim
+      queueManager:
+        class: ibmc-file-gold-gid
+        size: 2Gi
+        type: persistent-claim
+      recoveryLogs:
+        class: ibmc-file-gold-gid
+        enabled: true
+        size: 2Gi
+        type: persistent-claim
+  pki:
+    keys:
+      - name: example
+        secret:
+          secretName: mq-ha-mi-secret
+          items: 
+          - tls.key
+          - tls.crt      

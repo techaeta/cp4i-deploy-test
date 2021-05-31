@@ -1,0 +1,16 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: APIConnectCluster
+metadata:
+  name: production
+  labels:
+    app.kubernetes.io/instance: apiconnect
+    app.kubernetes.io/managed-by: ibm-apiconnect
+    app.kubernetes.io/name: apiconnect-production
+  namespace: cp4i-apic
+spec:
+  license:
+    accept: true
+    use: production
+  storageClassName: ibmc-vpc-block-metro-10iops-tier
+  profile: n12xc4.m12
+  version: 10.0.1.2-ifix2-100-eus

@@ -1,0 +1,12 @@
+apiVersion: ocs.ibm.io/v1
+kind: OcsCluster
+metadata:
+ name: ocscluster-vpc
+spec:
+ monStorageClassName: ibmc-vpc-block-metro-10iops-tier # For multizone clusters, specify a 'metro' storage class
+ monSize: 20Gi
+ osdStorageClassName: ibmc-vpc-block-metro-10iops-tier # For multizone clusters, specify a 'metro' storage class
+ osdSize: 100Gi # The OSD size is the total storage capacity of your OCS storage cluster
+ numOfOsd: 1
+ billingType: hourly
+ ocsUpgrade: false

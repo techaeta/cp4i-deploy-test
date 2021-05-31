@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: ibm-processmining-catalog
+  namespace: openshift-marketplace
+spec:
+  displayName: IBM Process Mining operator
+  image: docker.io/ibmcom/processmining-operator:latest
+  publisher: IBM
+  sourceType: grpc
+  updateStrategy:
+    registryPoll:
+      interval: 45m

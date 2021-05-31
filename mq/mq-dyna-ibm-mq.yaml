@@ -1,0 +1,527 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  annotations:
+    oneagent.dynatrace.com/inject: 'true'
+  selfLink: /apis/apps/v1/namespaces/cp4i/statefulsets/mq-dyna-ibm-mq
+  resourceVersion: '193932021'
+  name: mq-dyna-ibm-mq
+  uid: b3a7134d-81e0-4d99-ac10-d429afd6cd81
+  creationTimestamp: '2021-01-15T20:27:35Z'
+  generation: 6
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-01-15T20:35:07Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:replicas': {}
+    - manager: ibm-mq
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-01-15T23:40:59Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:oneagent.dynatrace.com/inject': {}
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/managed-by': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/version': {}
+          'f:ownerReferences':
+            .: {}
+            'k:{"uid":"3bea4a1c-1e40-431e-9c3e-51195a4b8add"}':
+              .: {}
+              'f:apiVersion': {}
+              'f:blockOwnerDeletion': {}
+              'f:controller': {}
+              'f:kind': {}
+              'f:name': {}
+              'f:uid': {}
+        'f:spec':
+          'f:podManagementPolicy': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector':
+            'f:matchLabels':
+              .: {}
+              'f:app.kubernetes.io/component': {}
+              'f:app.kubernetes.io/instance': {}
+              'f:app.kubernetes.io/managed-by': {}
+              'f:app.kubernetes.io/name': {}
+          'f:serviceName': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                'f:cloudpakName': {}
+                'f:productName': {}
+                'f:productChargedContainers': {}
+                'f:oneagent.dynatrace.com/inject': {}
+                'f:productCloudpakRatio': {}
+                'f:productMetric': {}
+                .: {}
+                'f:cloudpakId': {}
+                'f:productID': {}
+                'f:productVersion': {}
+                'f:cloudpakVersion': {}
+              'f:labels':
+                .: {}
+                'f:app.kubernetes.io/component': {}
+                'f:app.kubernetes.io/instance': {}
+                'f:app.kubernetes.io/managed-by': {}
+                'f:app.kubernetes.io/name': {}
+                'f:app.kubernetes.io/version': {}
+            'f:spec':
+              'f:volumes':
+                .: {}
+                'k:{"name":"dynatracekeystore"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:items': {}
+                    'f:secretName': {}
+                'k:{"name":"oidc-certificate"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:items': {}
+                    'f:secretName': {}
+                'k:{"name":"trust0"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:items': {}
+                    'f:secretName': {}
+              'f:containers':
+                'k:{"name":"qmgr"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/etc/mqm/pki/keys/dynatracekeystore"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                    'k:{"mountPath":"/etc/mqm/pki/trust/0"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                    'k:{"mountPath":"/etc/mqm/pki/trust/default"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources':
+                    .: {}
+                    'f:limits':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                    'f:requests':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                  'f:livenessProbe':
+                    .: {}
+                    'f:exec':
+                      .: {}
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:initialDelaySeconds': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:env':
+                    'k:{"name":"MQ_EPHEMERAL_PREFIX"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_NAMESPACE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"DEBUG"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_OIDC_JWK_ENDPOINT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_MULTI_INSTANCE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_OIDC_AUTHORIZATION_ENDPOINT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_OIDC_TOKEN_ENDPOINT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_BETA_ENABLE_SSO"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_OIDC_CLIENT_SECRET"}':
+                      .: {}
+                      'f:name': {}
+                      'f:valueFrom':
+                        .: {}
+                        'f:secretKeyRef':
+                          .: {}
+                          'f:key': {}
+                          'f:name': {}
+                    'k:{"name":"MQ_QMGR_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    .: {}
+                    'k:{"name":"MQ_GENERATE_CERTIFICATE_HOSTNAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_ENABLE_OPEN_TRACING"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"LICENSE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_ENABLE_METRICS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_CP4I_SERVICES_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_ENABLE_EMBEDDED_WEB_SERVER"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQSNOAUT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_GRACE_PERIOD"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_OIDC_ISSUER_IDENTIFIER"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_OIDC_CLIENT_ID"}':
+                      .: {}
+                      'f:name': {}
+                      'f:valueFrom':
+                        .: {}
+                        'f:secretKeyRef':
+                          .: {}
+                          'f:key': {}
+                          'f:name': {}
+                    'k:{"name":"LOG_FORMAT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_ENABLE_TRACE_STRMQM"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"IAM_URL"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"MQ_OIDC_UNIQUE_USER_IDENTIFIER"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:readinessProbe':
+                    .: {}
+                    'f:exec':
+                      .: {}
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:initialDelaySeconds': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:securityContext':
+                    .: {}
+                    'f:allowPrivilegeEscalation': {}
+                    'f:capabilities':
+                      .: {}
+                      'f:drop': {}
+                    'f:privileged': {}
+                    'f:readOnlyRootFilesystem': {}
+                    'f:runAsNonRoot': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":1414,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":9157,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":9443,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+              'f:dnsPolicy': {}
+              'f:serviceAccount': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:terminationGracePeriodSeconds': {}
+              'f:serviceAccountName': {}
+              'f:securityContext': {}
+              'f:affinity': {}
+          'f:updateStrategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:partition': {}
+            'f:type': {}
+        'f:status':
+          'f:replicas': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-03-17T18:06:04Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:currentReplicas': {}
+          'f:currentRevision': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:updateRevision': {}
+          'f:updatedReplicas': {}
+  namespace: cp4i
+  ownerReferences:
+    - apiVersion: mq.ibm.com/v1beta1
+      kind: QueueManager
+      name: mq-dyna
+      uid: 3bea4a1c-1e40-431e-9c3e-51195a4b8add
+      controller: true
+      blockOwnerDeletion: true
+  labels:
+    app.kubernetes.io/component: integration
+    app.kubernetes.io/instance: mq-dyna
+    app.kubernetes.io/managed-by: operator
+    app.kubernetes.io/name: ibm-mq
+    app.kubernetes.io/version: 9.2.0.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: integration
+      app.kubernetes.io/instance: mq-dyna
+      app.kubernetes.io/managed-by: operator
+      app.kubernetes.io/name: ibm-mq
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/component: integration
+        app.kubernetes.io/instance: mq-dyna
+        app.kubernetes.io/managed-by: operator
+        app.kubernetes.io/name: ibm-mq
+        app.kubernetes.io/version: 9.2.0.0
+      annotations:
+        cloudpakId: c8b82d189e7545f0892db9ef2731b90d
+        productVersion: 9.2.0.0
+        productID: 21dfe9a0f00f444f888756d835334909
+        cloudpakName: IBM Cloud Pak for Integration
+        cloudpakVersion: 2020.3.1-0
+        productChargedContainers: qmgr
+        productCloudpakRatio: '4:1'
+        productName: IBM MQ Advanced for Non-Production
+        oneagent.dynatrace.com/inject: 'true'
+        productMetric: PROCESSOR_VALUE_UNIT
+    spec:
+      restartPolicy: Always
+      serviceAccountName: mq-dyna-ibm-mq
+      schedulerName: default-scheduler
+      affinity: {}
+      terminationGracePeriodSeconds: 30
+      securityContext: {}
+      containers:
+        - resources:
+            limits:
+              cpu: '1'
+              memory: 1Gi
+            requests:
+              cpu: '1'
+              memory: 1Gi
+          readinessProbe:
+            exec:
+              command:
+                - chkmqready
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 5
+            successThreshold: 1
+            failureThreshold: 1
+          terminationMessagePath: /run/termination-log
+          name: qmgr
+          livenessProbe:
+            exec:
+              command:
+                - chkmqhealthy
+            initialDelaySeconds: 90
+            timeoutSeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 1
+          env:
+            - name: MQSNOAUT
+              value: 'yes'
+            - name: LICENSE
+              value: accept
+            - name: MQ_QMGR_NAME
+              value: dynaqm
+            - name: MQ_MULTI_INSTANCE
+              value: 'false'
+            - name: MQ_ENABLE_METRICS
+              value: 'true'
+            - name: MQ_ENABLE_EMBEDDED_WEB_SERVER
+              value: 'true'
+            - name: LOG_FORMAT
+              value: basic
+            - name: DEBUG
+              value: 'false'
+            - name: MQ_ENABLE_TRACE_STRMQM
+              value: 'false'
+            - name: MQ_EPHEMERAL_PREFIX
+              value: /run/mqm
+            - name: MQ_GRACE_PERIOD
+              value: '29'
+            - name: MQ_GENERATE_CERTIFICATE_HOSTNAME
+              value: >-
+                mq-dyna-ibm-mq-web-cp4i.ac5003-dev-wash-ttyrouter-4196ce9859c75746d086ac873cb8ca3c-0000.us-east.containers.appdomain.cloud
+            - name: MQ_BETA_ENABLE_SSO
+              value: 'true'
+            - name: MQ_OIDC_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: mq-dyna-ibm-mq-oidc-reg
+                  key: CLIENT_ID
+            - name: MQ_OIDC_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: mq-dyna-ibm-mq-oidc-reg
+                  key: CLIENT_SECRET
+            - name: MQ_OIDC_UNIQUE_USER_IDENTIFIER
+              value: sub
+            - name: MQ_OIDC_AUTHORIZATION_ENDPOINT
+              value: >-
+                https://cp-console.ac5003-dev-wash-ttyrouter-4196ce9859c75746d086ac873cb8ca3c-0000.us-east.containers.appdomain.cloud:443/idauth/oidc/endpoint/OP/authorize
+            - name: MQ_OIDC_TOKEN_ENDPOINT
+              value: >-
+                https://cp-console.ac5003-dev-wash-ttyrouter-4196ce9859c75746d086ac873cb8ca3c-0000.us-east.containers.appdomain.cloud:443/idprovider/v1/auth/token
+            - name: MQ_OIDC_JWK_ENDPOINT
+              value: >-
+                https://cp-console.ac5003-dev-wash-ttyrouter-4196ce9859c75746d086ac873cb8ca3c-0000.us-east.containers.appdomain.cloud:443/idauth/oidc/endpoint/OP/jwk
+            - name: MQ_OIDC_ISSUER_IDENTIFIER
+              value: >-
+                https://127.0.0.1:443/idauth/oidc/endpoint/OP,https://127.0.0.1:9443/oidc/endpoint/OP
+            - name: IAM_URL
+              value: >-
+                https://cp-console.ac5003-dev-wash-ttyrouter-4196ce9859c75746d086ac873cb8ca3c-0000.us-east.containers.appdomain.cloud:443
+            - name: MQ_NAMESPACE
+              value: cp4i
+            - name: MQ_CP4I_SERVICES_URL
+              value: 'https://icp4i-services-cp4i.cp4i.svc:3000'
+            - name: MQ_ENABLE_OPEN_TRACING
+              value: 'false'
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            privileged: false
+            runAsNonRoot: true
+            readOnlyRootFilesystem: false
+            allowPrivilegeEscalation: false
+          ports:
+            - containerPort: 1414
+              protocol: TCP
+            - containerPort: 9157
+              protocol: TCP
+            - containerPort: 9443
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: dynatracekeystore
+              readOnly: true
+              mountPath: /etc/mqm/pki/keys/dynatracekeystore
+            - name: trust0
+              readOnly: true
+              mountPath: /etc/mqm/pki/trust/0
+            - name: oidc-certificate
+              mountPath: /etc/mqm/pki/trust/default
+          terminationMessagePolicy: File
+          image: >-
+            cp.icr.io/cp/ibm-mqadvanced-server-integration@sha256:8fcb49d89c250adc42ece9fca3f6774ba78361a082174958bd0f37373cdb6360
+      serviceAccount: mq-dyna-ibm-mq
+      volumes:
+        - name: dynatracekeystore
+          secret:
+            secretName: mq-aacapr01-secret
+            items:
+              - key: tls.key
+                path: tls.key
+              - key: tls.crt
+                path: tls.crt
+            defaultMode: 288
+        - name: trust0
+          secret:
+            secretName: mq-aacapr01-secret
+            items:
+              - key: app.crt
+                path: app.crt
+            defaultMode: 288
+        - name: oidc-certificate
+          secret:
+            secretName: ibmcloud-cluster-ca-cert
+            items:
+              - key: ca.crt
+                path: OIDC_CERTIFICATE.crt
+            defaultMode: 420
+      dnsPolicy: ClusterFirst
+  serviceName: qm
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 0
+  revisionHistoryLimit: 10
+status:
+  observedGeneration: 6
+  replicas: 1
+  readyReplicas: 1
+  currentReplicas: 1
+  updatedReplicas: 1
+  currentRevision: mq-dyna-ibm-mq-7488f79fcf
+  updateRevision: mq-dyna-ibm-mq-7488f79fcf
+  collisionCount: 0

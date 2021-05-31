@@ -1,0 +1,27 @@
+apiVersion: instana.io/v1beta1
+kind: InstanaAgent
+metadata:
+  name: instana-agent
+  namespace: instana-agent
+spec:
+  agent.zone.name: ibm-us-east
+  agent.key: qUMhYJxjSv6uZh2SyqTEnw
+  agent.endpoint.host: ec2-18-216-174-231.us-east-2.compute.amazonaws.com
+  agent.endpoint.port: 1444
+  agent.env:
+    INSTANA_AGENT_TAGS: roks, mq
+  cluster.name: cp4i-validation-6nodes
+  config.files:
+    configuration.yaml: |
+      com.instana.plugin.ibmmq:
+        enabled: true
+        poll_rate: 5
+        queueManagers:
+          nativeha:
+            host: 'nativeha-ibm-mq.cp4i.svc.cluster.local'
+            port: '1414'
+            channel: 'SYSTEM.ADMIN.SVRCONN'
+            username: 'mqmuser'
+            password: 'mqmuser'
+            queuesRegex: 'APP.*'
+            availabilityZone: 'IBM MQ'

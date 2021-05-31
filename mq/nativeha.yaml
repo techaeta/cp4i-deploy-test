@@ -1,0 +1,38 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: nativeha
+  namespace: cp4i
+spec:
+  version: 9.2.2.0-r1
+  license:
+    accept: true
+    license: L-RJON-BYRMYW
+    use: "NonProduction"
+  pki:
+    keys:
+    - name: default
+      secret:
+        secretName: nativehacert
+        items:
+          - tls.key
+          - tls.crt
+  web:
+    enabled: false
+  queueManager:
+    mqsc:
+      - configMap:
+          name: nativehamqsc
+          items:
+            - nativehamqsc.mqsc
+    availability:
+      type: NativeHA
+    storage:
+      defaultClass: ibmc-vpc-block-10iops-tier
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr

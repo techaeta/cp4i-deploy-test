@@ -1,0 +1,24 @@
+{
+    "channel":
+    [
+        {
+            "name": "MIQMCHL",
+            "clientConnection":
+            {
+                "connection":
+                [
+                    {
+                        "host": "mq-ha-mi-ibm-mq-qm-cp4i.cp4i-validation-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-east.containers.appdomain.cloud",
+                        "port": 443
+                    }
+                ],
+                "queueManager": "QM1"
+            },
+            "transmissionSecurity":
+          {
+            "cipherSpecification": "ANY_TLS12"
+          },
+          "type": "clientConnection"
+        }
+    ]
+}

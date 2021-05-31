@@ -1,0 +1,22 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: production-gw-datapower-replica-0
+  namespace: cp4i-apic
+  labels:
+    app.kubernetes.io/part-of: production
+    crd.apiconnect.ibm.com/instance: production-gw
+    crd.apiconnect.ibm.com/kind: datapower
+spec:
+  ports:
+    - name: gw-rest-mgmt
+      protocol: TCP
+      port: 5550
+      targetPort: 5550
+  selector:
+    app.kubernetes.io/component: datapower
+    app.kubernetes.io/instance: cp4i-apic-production-gw
+    app.kubernetes.io/managed-by: datapower-operator
+    app.kubernetes.io/name: datapower
+    statefulset.kubernetes.io/pod-name: production-gw-0
+  type: ClusterIP     

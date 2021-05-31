@@ -1,0 +1,571 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  annotations:
+    appconnectenterprise: operator-icp4i
+    deployment.kubernetes.io/revision: '25'
+    serverName: aircommatipb-tty-es-int
+  selfLink: /apis/apps/v1/namespaces/cp4i/deployments/aircommatipb-tty-es-int-is
+  resourceVersion: '186132881'
+  name: aircommatipb-tty-es-int-is
+  uid: 1b080c6e-b35f-4604-8077-956d74da59d9
+  creationTimestamp: '2020-11-14T16:44:37Z'
+  generation: 32
+  managedFields:
+    - manager: unknown
+      operation: Update
+      apiVersion: apps/v1
+      time: '2020-12-11T17:46:39Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                'f:appconnect.ibm.com/restart-time': {}
+    - manager: ibm-appconnect
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-01-27T03:13:51Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:appconnectenterprise': {}
+            'f:serverName': {}
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/managed-by': {}
+            'f:app.kubernetes.io/name': {}
+            'f:appconnect.ibm.com/kind': {}
+            'f:release': {}
+          'f:ownerReferences':
+            .: {}
+            'k:{"uid":"c9ae5650-e125-4478-96e0-af4351feedc1"}':
+              .: {}
+              'f:apiVersion': {}
+              'f:blockOwnerDeletion': {}
+              'f:controller': {}
+              'f:kind': {}
+              'f:name': {}
+              'f:uid': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector':
+            'f:matchLabels':
+              .: {}
+              'f:app.kubernetes.io/instance': {}
+              'f:app.kubernetes.io/managed-by': {}
+              'f:app.kubernetes.io/name': {}
+              'f:release': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                'f:cloudpakName': {}
+                'f:productName': {}
+                'f:productChargedContainers': {}
+                'f:productCloudpakRatio': {}
+                'f:productMetric': {}
+                .: {}
+                'f:cloudpakId': {}
+                'f:productID': {}
+                'f:productVersion': {}
+                'f:cloudpakVersion': {}
+              'f:labels':
+                .: {}
+                'f:app.kubernetes.io/instance': {}
+                'f:app.kubernetes.io/managed-by': {}
+                'f:app.kubernetes.io/name': {}
+                'f:appconnect.ibm.com/kind': {}
+                'f:release': {}
+            'f:spec':
+              'f:volumes':
+                .: {}
+                'k:{"name":"ace-secret-2"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:items': {}
+                    'f:secretName': {}
+                'k:{"name":"ace-secret-3"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:items': {}
+                    'f:secretName': {}
+                'k:{"name":"ace-secret-4"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:items': {}
+                    'f:secretName': {}
+                'k:{"name":"ace-secret-5"}':
+                  .: {}
+                  'f:name': {}
+                  'f:secret':
+                    .: {}
+                    'f:defaultMode': {}
+                    'f:items': {}
+                    'f:secretName': {}
+              'f:containers':
+                'k:{"name":"aircommatipb-tty-es-int"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/home/aceuser/secrets/aceclient.kdb-kc48b"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                    'k:{"mountPath":"/home/aceuser/secrets/aceclient.sth-fsm2l"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                    'k:{"mountPath":"/home/aceuser/secrets/aircommatipb-tty-es-int-is-adminssl"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                    'k:{"mountPath":"/home/aceuser/secrets/tty-eventstream-setdbparms-s9tn5"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                      'f:readOnly': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources':
+                    .: {}
+                    'f:limits':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                    'f:requests':
+                      .: {}
+                      'f:cpu': {}
+                      'f:memory': {}
+                  'f:livenessProbe':
+                    .: {}
+                    'f:exec':
+                      .: {}
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:initialDelaySeconds': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:env':
+                    'k:{"name":"ACE_ADMIN_SERVER_CA"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_ADMIN_SERVER_SECURITY"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_ADMIN_SERVER_CERT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_ENABLE_METRICS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"DEFAULT_CONTENT_SERVER"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_ADMIN_SERVER_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    .: {}
+                    'k:{"name":"ACE_HTTP_ROUTE_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_ADMIN_SERVER_KEY"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"LICENSE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_HTTPS_ROUTE_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"LOG_FORMAT"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_DEFAULT_APPLICATION_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"SERVICE_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_ENDPOINT_TYPE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"DESIGNER_FLOWS_OPERATION_MODE"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_CONFIGURATIONS"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_SERVER_NAME"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"GODEBUG"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                    'k:{"name":"ACE_ENABLE_OPEN_TRACING"}':
+                      .: {}
+                      'f:name': {}
+                      'f:value': {}
+                  'f:readinessProbe':
+                    .: {}
+                    'f:exec':
+                      .: {}
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:initialDelaySeconds': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:securityContext':
+                    .: {}
+                    'f:allowPrivilegeEscalation': {}
+                    'f:capabilities':
+                      .: {}
+                      'f:drop': {}
+                    'f:privileged': {}
+                    'f:readOnlyRootFilesystem': {}
+                    'f:runAsNonRoot': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":7600,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":7800,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                    'k:{"containerPort":7843,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                  'f:name': {}
+              'f:dnsPolicy': {}
+              'f:serviceAccount': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:terminationGracePeriodSeconds': {}
+              'f:serviceAccountName': {}
+              'f:securityContext': {}
+              'f:affinity':
+                .: {}
+                'f:nodeAffinity':
+                  .: {}
+                  'f:requiredDuringSchedulingIgnoredDuringExecution':
+                    .: {}
+                    'f:nodeSelectorTerms': {}
+                'f:podAntiAffinity':
+                  .: {}
+                  'f:preferredDuringSchedulingIgnoredDuringExecution': {}
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-03-11T21:14:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:replicas': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-03-11T21:14:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+  namespace: cp4i
+  ownerReferences:
+    - apiVersion: appconnect.ibm.com/v1beta1
+      kind: IntegrationServer
+      name: aircommatipb-tty-es-int
+      uid: c9ae5650-e125-4478-96e0-af4351feedc1
+      controller: true
+      blockOwnerDeletion: true
+  labels:
+    app.kubernetes.io/instance: aircommatipb-tty-es-int
+    app.kubernetes.io/managed-by: ibm-appconnect
+    app.kubernetes.io/name: aircommatipb-tty-es-int
+    appconnect.ibm.com/kind: IntegrationServer
+    release: aircommatipb-tty-es-int
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: aircommatipb-tty-es-int
+      app.kubernetes.io/managed-by: ibm-appconnect
+      app.kubernetes.io/name: aircommatipb-tty-es-int
+      release: aircommatipb-tty-es-int
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: aircommatipb-tty-es-int
+        app.kubernetes.io/managed-by: ibm-appconnect
+        app.kubernetes.io/name: aircommatipb-tty-es-int
+        appconnect.ibm.com/kind: IntegrationServer
+        release: aircommatipb-tty-es-int
+      annotations:
+        cloudpakId: c8b82d189e7545f0892db9ef2731b90d
+        productVersion: 11.0.0.10
+        productID: 606f1a9feb4f4cbc85b17a637f6a6b24
+        cloudpakName: IBM Cloud Pak for Integration
+        cloudpakVersion: 2020.2.1
+        productChargedContainers: All
+        productCloudpakRatio: '1:3'
+        appconnect.ibm.com/restart-time: '1607708799443'
+        productName: >-
+          IBM Cloud Pak for Integration - IBM App Connect Enterprise
+          (Chargeable)
+        productMetric: VIRTUAL_PROCESSOR_CORE
+    spec:
+      restartPolicy: Always
+      serviceAccountName: aircommatipb-tty-es-int-is
+      schedulerName: default-scheduler
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/arch
+                    operator: In
+                    values:
+                      - amd64
+                      - s390x
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/instance: aircommatipb-tty-es-int
+                    app.kubernetes.io/managed-by: ibm-appconnect
+                    app.kubernetes.io/name: aircommatipb-tty-es-int
+                    release: aircommatipb-tty-es-int
+                topologyKey: kubernetes.io/hostname
+      terminationGracePeriodSeconds: 30
+      securityContext: {}
+      containers:
+        - resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
+            requests:
+              cpu: 100m
+              memory: 256Mi
+          readinessProbe:
+            exec:
+              command:
+                - chkacehealthy
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 5
+            successThreshold: 1
+            failureThreshold: 1
+          terminationMessagePath: /dev/termination-log
+          name: aircommatipb-tty-es-int
+          livenessProbe:
+            exec:
+              command:
+                - chkacehealthy
+            initialDelaySeconds: 360
+            timeoutSeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 1
+          env:
+            - name: ACE_DEFAULT_APPLICATION_NAME
+              value: DefaultApplication
+            - name: ACE_ENABLE_METRICS
+              value: 'true'
+            - name: ACE_ENABLE_OPEN_TRACING
+              value: 'false'
+            - name: ACE_ENDPOINT_TYPE
+              value: http
+            - name: ACE_HTTP_ROUTE_NAME
+              value: aircommatipb-tty-es-int-http
+            - name: ACE_HTTPS_ROUTE_NAME
+              value: aircommatipb-tty-es-int-https
+            - name: ACE_SERVER_NAME
+              value: aircommatipb-tty-es-int
+            - name: DESIGNER_FLOWS_OPERATION_MODE
+              value: disabled
+            - name: LOG_FORMAT
+              value: basic
+            - name: SERVICE_NAME
+              value: aircommatipb-tty-es-int-is
+            - name: LICENSE
+              value: accept
+            - name: GODEBUG
+              value: x509ignoreCN=0
+            - name: ACE_ADMIN_SERVER_SECURITY
+              value: 'true'
+            - name: ACE_ADMIN_SERVER_CA
+              value: /home/aceuser/adminssl
+            - name: ACE_ADMIN_SERVER_CERT
+              value: /home/aceuser/adminssl/tls.crt.pem
+            - name: ACE_ADMIN_SERVER_KEY
+              value: /home/aceuser/adminssl/tls.key.pem
+            - name: ACE_ADMIN_SERVER_NAME
+              value: aircommatipb-tty-es-int
+            - name: ACE_CONFIGURATIONS
+              value: >-
+                tty-defaultmqpolicy,tty-defaultkafkapolicy-test,tty-eventstream-setdbparms,aceclient.kdb,aceclient.sth,aircommatipb-tty-es-int-is-adminssl
+            - name: DEFAULT_CONTENT_SERVER
+              value: 'true'
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            privileged: false
+            runAsNonRoot: true
+            readOnlyRootFilesystem: false
+            allowPrivilegeEscalation: false
+          ports:
+            - name: webui
+              containerPort: 7600
+              protocol: TCP
+            - name: ace-http
+              containerPort: 7800
+              protocol: TCP
+            - name: ace-https
+              containerPort: 7843
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: ace-secret-2
+              readOnly: true
+              mountPath: /home/aceuser/secrets/tty-eventstream-setdbparms-s9tn5
+            - name: ace-secret-3
+              readOnly: true
+              mountPath: /home/aceuser/secrets/aceclient.kdb-kc48b
+            - name: ace-secret-4
+              readOnly: true
+              mountPath: /home/aceuser/secrets/aceclient.sth-fsm2l
+            - name: ace-secret-5
+              readOnly: true
+              mountPath: /home/aceuser/secrets/aircommatipb-tty-es-int-is-adminssl
+          terminationMessagePolicy: File
+          image: >-
+            gbsartifactory.edst.ibm.com/aircanada-cp4i/img/pipeline/matipb/aircommatipb_tty_es:e58f5fe_34904d8_INT
+      serviceAccount: aircommatipb-tty-es-int-is
+      volumes:
+        - name: ace-secret-2
+          secret:
+            secretName: tty-eventstream-setdbparms-s9tn5
+            items:
+              - key: configuration
+                path: configuration
+            defaultMode: 420
+        - name: ace-secret-3
+          secret:
+            secretName: aceclient.kdb-kc48b
+            items:
+              - key: configuration
+                path: configuration
+            defaultMode: 420
+        - name: ace-secret-4
+          secret:
+            secretName: aceclient.sth-fsm2l
+            items:
+              - key: configuration
+                path: configuration
+            defaultMode: 420
+        - name: ace-secret-5
+          secret:
+            secretName: aircommatipb-tty-es-int-is-adminssl
+            items:
+              - key: configuration
+                path: configuration
+            defaultMode: 420
+      dnsPolicy: ClusterFirst
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 32
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2021-01-27T03:14:28Z'
+      lastTransitionTime: '2020-11-17T19:33:36Z'
+      reason: NewReplicaSetAvailable
+      message: >-
+        ReplicaSet "aircommatipb-tty-es-int-is-69d6d79865" has successfully
+        progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2021-03-11T07:05:32Z'
+      lastTransitionTime: '2021-03-11T07:05:32Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
