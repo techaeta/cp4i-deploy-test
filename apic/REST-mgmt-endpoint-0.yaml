@@ -11,8 +11,8 @@ spec:
   ports:
     - name: gw-rest-mgmt
       protocol: TCP
-      port: 5550
-      targetPort: 5550
+      port: 5554
+      targetPort: 5554
   selector:
     app.kubernetes.io/component: datapower
     app.kubernetes.io/instance: cp4i-apic-production-gw
